@@ -10,3 +10,7 @@ VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
+
+UrL:https://github.com/BaeTheDreamBoat/Guessing-Game
+User:BaeTheDreamBoat
+Pass:Turtlemonster999
