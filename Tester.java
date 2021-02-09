@@ -13,5 +13,17 @@ public class Tester
     public static void main(String args[])
     {
         Scanner kbReader = new Scanner(System.in);
+        System.out.println("Type the color of your card (red/blue)");
+        String color = kbReader.nextLine();
+        if (color.equalsIgnoreCase("red"))
+        {
+            
+        }
+        else if (color.equalsIgnoreCase("black"))
+        {
+            
+        }
+        else
+            System.out.println("thats the wrong color");
     }
 }
