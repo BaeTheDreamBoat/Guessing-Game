@@ -7,16 +7,20 @@
  */
 import java.io.*;
 import java.util.*;
+import csteutils.myro.*;
+import csteutils.*;
+import java.util.Scanner;
 public class Tester
 {
     public static void main(String args[])
     {
         String yesNo = ""; //use for yes/no questions
-        String hORd = ""; //use for hearst or diamonds
-        String sORc = ""; //use for spade or clubs
+        String hORd = ""; //use for hearts or diamonds
+        String sORc = ""; //use for spades or clubs
+        MyroColorImage picture = new MyroColorImage(200, 200);
         Scanner kbReader = new Scanner(System.in);
         System.out.println("Type the color of your card (red/black)");
-        String color = kbReader.nextLine();
+        String color = kbReader.next();
         if (color.equalsIgnoreCase("red")) //asks if the card is red or blue
         {
             System.out.println("Is your card a face card?\n1-yes it is a face card\n2-no it is not a face card");
@@ -25,14 +29,27 @@ public class Tester
             {
                 case 1: //face branch
                 System.out.println("Is your card a King?");
-                yesNo = kbReader.nextLine();
+                yesNo = kbReader.next();
                 if (yesNo.equalsIgnoreCase("yes"))
                 {
                     boolean chkKing = true; //this will help determine if card is joker
-                    System.out.print("Type if the card is the card Diamonds or Hearts");
-                    hORd = kbReader.nextLine();
+                    System.out.println("Is the card Heats or Diamonds? (Hearts/Diamonds)");
+                    hORd = kbReader.next();
                     if (hORd.equalsIgnoreCase("diamonds"))
-                        System.out.println("Your card is the King of Diamonds");
+                    {
+                        System.out.println("Is your card is the King of Diamonds?");
+                        yesNo = kbReader.next();
+                        if (yesNo.equalsIgnoreCase("yes"))
+                        {
+                            System.out.print("Neat");
+                            picture.loadImage("monkeyhaircut.jpeg");
+                            picture.show();
+                        }
+                        else if (yesNo.equalsIgnoreCase("no"))
+                            System.out.print("I blame the user");
+                        else
+                            System.out.print("that was not yes or no");
+                    }
                     else if (hORd.equalsIgnoreCase("hearts"))
                         System.out.print("Your card is the King of Hearts");
                     else
@@ -41,15 +58,15 @@ public class Tester
                 else if (yesNo.equalsIgnoreCase("no"))
                 {
                     boolean chkKing = false;
-                    System.out.println("Is your card a Qeen?");
-                    yesNo = kbReader.nextLine();
+                    System.out.println("Is your card a Queen?");
+                    yesNo = kbReader.next();
                     if (yesNo.equalsIgnoreCase("yes"))
                     {
                         boolean chkQueen = true;
-                        System.out.print("Type if the card is the card Diamonds or Hearts");
-                        hORd = kbReader.nextLine();
+                        System.out.println("Is the card Heats or Diamonds? (Hearts/Diamonds)");
+                        hORd = kbReader.next();
                         if (hORd.equalsIgnoreCase("diamonds"))
-                            System.out.println("Your card is the Queen of Diamonds");
+                            System.out.print("Your card is the Queen of Diamonds");
                         else if (hORd.equalsIgnoreCase("hearts"))
                             System.out.print("Your card is the Queen of Hearts");
                         else
@@ -59,12 +76,12 @@ public class Tester
                     {
                         boolean chkQueen = false;
                         System.out.println("Is your card a Jack?");
-                        yesNo = kbReader.nextLine();
+                        yesNo = kbReader.next();
                         if (yesNo.equalsIgnoreCase("yes"))
                         {
                             boolean chkJack = true;
-                            System.out.print("Type if the card is the card Diamonds or Hearts");
-                            hORd = kbReader.nextLine();
+                            System.out.print("Is the card Heats or Diamonds? (Hearts/Diamonds)");
+                            hORd = kbReader.next();
                             if (hORd.equalsIgnoreCase("diamonds"))
                                 System.out.println("Your card is the Jack of Diamonds");
                             else if (hORd.equalsIgnoreCase("hearts"))
@@ -99,8 +116,6 @@ public class Tester
         else if (color.equalsIgnoreCase("black"))
         {
 
-        }
-        else
-            System.out.println("thats the wrong color");
+        }   
     }
 }
