@@ -16,7 +16,7 @@ public class Tester
         String hORd = ""; //use for hearst or diamonds
         String sORc = ""; //use for spade or clubs
         Scanner kbReader = new Scanner(System.in);
-        System.out.println("Type the color of your card (red/blue)");
+        System.out.println("Type the color of your card (red/black)");
         String color = kbReader.nextLine();
         if (color.equalsIgnoreCase("red")) //asks if the card is red or blue
         {
